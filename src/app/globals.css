@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fae0e0;
   --foreground: #171717;
 }
 
@@ -15,8 +15,8 @@
 } */
 
 @font-face {
-  font-family: "EBGaramond";
-  src: url("../app/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf");
+  font-family: "Bodoni_Moda";
+  src: url("../app/fonts/Bodoni_Moda/BodoniModa-VariableFont_opsz\,wght.ttf");
 }
 
 .glass {
@@ -31,7 +31,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "EBGaramond", Arial, Helvetica, sans-serif;
+  font-family: "Bodoni_Moda", Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
