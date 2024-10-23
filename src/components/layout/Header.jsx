@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import XIcon from "@mui/icons-material/X";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import Image from "next/image";
 
 import Logo from "../../assets/Logo.png";
@@ -53,16 +53,16 @@ const Header = () => {
               <InstagramIcon />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://facebook.com"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
             >
               <FacebookIcon />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://youtube.com"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
             >
-              <XIcon />
+              <YouTubeIcon />
             </Link>
           </div>
           <div className="lg:hidden flex flex-col justify-center">

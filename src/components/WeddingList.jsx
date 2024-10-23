@@ -5,7 +5,7 @@ import { PhotoCard } from "./PhotoCard";
 const WeddingList = () => {
   return (
     <>
-      <div className="px-24">
+      <div className="px-5 md:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-1">
           <PhotoCard
             img={

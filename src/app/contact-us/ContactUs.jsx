@@ -4,7 +4,8 @@ import { useState } from "react";
 import {Hero} from "../../components/Hero";
 import Link from "next/link";
 
-import XIcon from "@mui/icons-material/X";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 import { useForm } from "react-hook-form";
@@ -80,6 +81,12 @@ const ContactUs = () => {
                     <Link href="https://www.instagram.com">
                       <InstagramIcon />
                     </Link>
+                    <Link href="https://www.facebook.com">
+                      <FacebookIcon />
+                    </Link>
+                    <Link href="https://www.youtube.com">
+                      <YouTubeIcon />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -90,7 +97,7 @@ const ContactUs = () => {
                       type="text"
                       {...register("name", { required: "Name is required" })}
                       id="name"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                       placeholder="Full Name"
                     />
                     {errors.name && (
@@ -104,7 +111,7 @@ const ContactUs = () => {
                       type="email"
                       {...register("email", { required: "Email is required" })}
                       id="email"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                       placeholder="Email"
                     />
                     {errors.eamil && (
@@ -120,7 +127,7 @@ const ContactUs = () => {
                         required: "Mobile number is required",
                       })}
                       id="mobile"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                       placeholder="Mobile"
                     />
                     {errors.mobile && (
@@ -136,7 +143,7 @@ const ContactUs = () => {
                       })}
                       id="message"
                       rows={5}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 resize-none"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5 resize-none"
                       placeholder="Message"
                     />
                     {errors.message && (
@@ -149,14 +156,14 @@ const ContactUs = () => {
                     <button
                       disabled={loading}
                       type="button"
-                      className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      className="w-full text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                     >
                       Loading...
                     </button>
                   ) : (
                     <button
                       type="submit"
-                      className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      className="w-full text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                     >
                       Submit
                     </button>
