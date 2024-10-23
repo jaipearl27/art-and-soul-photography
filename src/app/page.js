@@ -1,5 +1,7 @@
 import { Hero } from "@/components/Hero";
 import WeddingList from "@/components/WeddingList";
+import ModernApproach from "./modern-approach/modernApproach";
+import VedioSec from "./vedio-sec/VedioSec";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
         
       />
       <WeddingList />
+      <ModernApproach/>
+      <VedioSec/>
     </>
   );
 }
