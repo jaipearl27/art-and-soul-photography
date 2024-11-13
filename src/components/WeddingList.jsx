@@ -1,52 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { PhotoCard } from "./PhotoCard";
+import axios from "axios";
 
 const WeddingList = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/photography`)
+      .then((res) => {
+        setData(res.data.Photographies);
+        console.log(res)
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
       <div className="px-5 md:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-1">
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1713905479101-NIWTKQZ1SS3GP47ZYF0Y/001+copy+2.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1707251420757-D4Y8RNWOF6B32Z9EHAHQ/ZAFA2077+009.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1728309731397-7SX5RFVHER5BFEH3P790/LONA2136+9090.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1693727025026-JEYC1JUDF20NITOLKEY9/VKR50027-2-2.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1713905479101-NIWTKQZ1SS3GP47ZYF0Y/001+copy+2.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1707251420757-D4Y8RNWOF6B32Z9EHAHQ/ZAFA2077+009.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1728309731397-7SX5RFVHER5BFEH3P790/LONA2136+9090.jpg?format=500w"
-            }
-          />
-          <PhotoCard
-            img={
-              "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1693727025026-JEYC1JUDF20NITOLKEY9/VKR50027-2-2.jpg?format=500w"
-            }
-          />
+          {data && data?.length > 0 &&
+            data?.map((item) => <PhotoCard img={item?.thumbnail} />)}
+            {!data || data?.length <= 0 && (
+              <div className="text-center py-2 ">No data found..</div>
+            )}
         </div>
       </div>
     </>

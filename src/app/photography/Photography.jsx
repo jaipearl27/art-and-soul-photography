@@ -1,54 +1,31 @@
+"use client";
+
 import { BlogCard } from "@/components/BlogCard";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Photography = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/photography`)
+      .then((res) => {
+        setData(res.data.Photographies);
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className="pt-[150px] space-y-10">
-        <div className="text-4xl text-center">
-            Photography
-        </div>
+      <div className="text-4xl text-center">Photography</div>
       <div className="mx-auto w-[90%] shadow bg-white rounded-3xl p-14 grid grid-cols-4 gap-10">
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1713905479101-NIWTKQZ1SS3GP47ZYF0Y/001+copy+2.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1707251420757-D4Y8RNWOF6B32Z9EHAHQ/ZAFA2077+009.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1728309731397-7SX5RFVHER5BFEH3P790/LONA2136+9090.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1693727025026-JEYC1JUDF20NITOLKEY9/VKR50027-2-2.jpg?format=500w"
-          }
-        />
-
-<BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1713905479101-NIWTKQZ1SS3GP47ZYF0Y/001+copy+2.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1707251420757-D4Y8RNWOF6B32Z9EHAHQ/ZAFA2077+009.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1728309731397-7SX5RFVHER5BFEH3P790/LONA2136+9090.jpg?format=500w"
-          }
-        />
-        <BlogCard
-          img={
-            "https://images.squarespace-cdn.com/content/v1/60b40cb3dd6dc9347755b5ab/1693727025026-JEYC1JUDF20NITOLKEY9/VKR50027-2-2.jpg?format=500w"
-          }
-        />
+        {data && data?.map((item) => <BlogCard img={item?.thumbnail} />)}
+        {!data ||
+          (data?.length <= 0 && (
+            <div className="text-center py-2 ">No data found..</div>
+          ))}
       </div>
     </div>
   );
