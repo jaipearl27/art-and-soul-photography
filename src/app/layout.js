@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased flex flex-col gap-10`}>
+      <body className={`antialiased flex flex-col gap-10 bg-[#f0e9e0]`}>
         <Header />
         {children}
         <Footer />

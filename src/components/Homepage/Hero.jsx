@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export const Hero = ({ img, width = "100", height = "100", customClass }) => {
+ const Hero = ({ img, width = "100", height = "100", customClass }) => {
   return (
     <>
       <Image
@@ -15,3 +15,5 @@ export const Hero = ({ img, width = "100", height = "100", customClass }) => {
     </>
   );
 };
+
+export default Hero

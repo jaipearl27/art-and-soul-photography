@@ -1,7 +1,7 @@
 import { Source } from '@mui/icons-material';
 import React from 'react';
 
-const VideoComponent = () => {
+const VedioSection = () => {
   return (
     <div>
    <div className="relative h-screen overflow-hidden">
@@ -46,4 +46,4 @@ This one is special, very special. Hiba and Akbar's story took us on a journey a
   );
 };
 
-export default VideoComponent;
+export default VedioSection;
