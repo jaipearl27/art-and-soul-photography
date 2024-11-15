@@ -2,7 +2,7 @@ import React from "react";
 
 const ModernApproach = () => {
   return (
-    <div className="text-gray-800 bg-[#f0e9e0] md:py-20 min-h-screen relative">
+    <div className="text-gray-800 md:py-20 min-h-screen relative">
       <div className="text-center text-nowrap text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-10 absolute top-10  md:top-[15%] lg:top-[20%]  xl:top-[25%] left-1/2 -translate-x-1/2 md:-translate-x-[60%]">
         <p>A MODERN APPROACH </p>
         <p>to an AGE OLD TRADITION</p>

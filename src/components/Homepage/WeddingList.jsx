@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PhotoCard } from "./PhotoCard";
+import { PhotoCard } from "../PhotoCard";
 import axios from "axios";
 
 const WeddingList = () => {
