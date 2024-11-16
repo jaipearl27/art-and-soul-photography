@@ -56,20 +56,20 @@ const ModernApproach = () => {
           HOTC is the only company listed on IMDB for its award-winning films.
         </p>
       </div>
-      <div class="flex justify-center xl:text-2xl space-x-1 pt-32 md:space-x-2 md:absolute md:bottom-32 lg:bottom-36  md:left-1/2 md:-translate-x-[30%]">
-        <span class="font-serif  text-gray-800">
+      <div className="flex justify-center xl:text-2xl space-x-1 pt-32 md:space-x-2 md:absolute md:bottom-32 lg:bottom-36  md:left-1/2 md:-translate-x-[30%]">
+        <span className="font-serif  text-gray-800">
           VOGUE
         </span>
-        <span class="font-sans font-bold text-gray-800">
+        <span className="font-sans font-bold text-gray-800">
           COSMOPOLITAN
         </span>
-        <span class="font-sans font-bold text-gray-800 bg-gray-300 px-2">
+        <span className="font-sans font-bold text-gray-800 bg-gray-300 px-2">
           HELLO!
         </span>
-        <span class="font-serif  text-gray-800">
+        <span className="font-serif  text-gray-800">
           BRIDES
         </span>
-        <span class="font-sans font-bold text-gray-800 bg-gray-300 px-2">
+        <span className="font-sans font-bold text-gray-800 bg-gray-300 px-2">
           TRAVEL+LEISURE
         </span>
       </div>
