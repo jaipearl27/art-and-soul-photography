@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {Hero} from "../../components/Homepage/Hero";
+import Hero from "../../components/Homepage/Hero";
 import Link from "next/link";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
