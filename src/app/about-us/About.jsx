@@ -1,6 +1,6 @@
 "use client";
 
-import { Hero } from "@/components/Homepage/Hero";
+import Hero from "@/components/Homepage/Hero";
 
 const About = () => {
   return (
