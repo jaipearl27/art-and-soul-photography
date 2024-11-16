@@ -6,7 +6,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Image from "next/image";
 
-import Logo from "../../assets/Logo.png";
+import Logo from "@/assets/Logo.png";
 
 const Footer = () => {
   return (
