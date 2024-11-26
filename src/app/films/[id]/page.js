@@ -28,9 +28,9 @@ const FilmViewPage = () => {
       {/* Thumbnail or Video */}
       <div className="relative w-full">
         {loading ? (
-          <div className="w-full h-[60vh] md:h-[80vh] bg-gray-300 animate-pulse flex justify-center items-center rounded-md relative">
+          <div className="w-full h-[60vh] md:h-[80vh] bg-gray-300 animate-pulse flex justify-center items-center rounded-md relative ">
             {/* Play Button Triangle Skeleton */}
-            <div className="w-0 h-0 border-t-[30px] border-b-[30px] border-l-[45px] border-l-gray-400 border-t-transparent border-b-transparent animate-pulse"></div>
+            <div className="w-0 h-0 border-t-[30px] border-b-[30px] border-l-[45px] border-l-gray-400 border-t-transparent border-b-transparent animate-pulse "></div>
           </div>
         ) : isPlaying ? (
           <iframe
