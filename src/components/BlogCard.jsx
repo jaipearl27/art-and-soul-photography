@@ -1,11 +1,12 @@
-"use client";
-
 import Image from "next/image";
-import { HiArrowLongRight } from "react-icons/hi2";
+import { useRouter } from "next/navigation";
 
 export const BlogCard = ({ img, film = false, item }) => {
+  const router = useRouter();
   return (
-    <div className=" p-4 flex flex-col space-y-4">
+    <div
+    onClick={ () => router.push(`/photography/${item._id}`) }
+    className=" p-4 cursor-pointer flex flex-col  space-y-4">
       {/* Image Section */}
       <div className="relative w-full">
         <Image
@@ -32,13 +33,6 @@ export const BlogCard = ({ img, film = false, item }) => {
             "This is a sample description used as a placeholder to illustrate where the actual description text will appear."}
         </div>
 
-        {/* Read More Section */}
-        <div className="flex items-center mt-3 gap-2">
-          <button className="text-sm font-medium text-blue-600 hover:underline">
-            Read More
-          </button>
-          <HiArrowLongRight className="text-blue-600 text-xl" />
-        </div>
 
         {/* Type/Category */}
         <div className="text-xs font-semibold uppercase text-gray-500 mt-4 tracking-wide">
