@@ -15,7 +15,8 @@ const Page = () => {
       .get(`${process.env.NEXT_PUBLIC_API_URL}/photography/${id}`)
       .then(({ data }) => {
         setPhotography(data?.photography);
-        setMediaFiles(data?.mediaFiles);
+
+        setMediaFiles(formatMediaFiles(data?.mediaFiles));
         setLoading(false);
       })
       .catch((err) => {
@@ -24,12 +25,31 @@ const Page = () => {
       });
   }, []);
 
+  const formatMediaFiles = (mediaFiles) => {
+    if (!Array.isArray(mediaFiles)) return [];
+
+    const formatted = [];
+    let toggle = true;
+
+    for (let i = 0; i < mediaFiles.length; ) {
+      const chunkSize = toggle ? 1 : 2;
+      const chunk = mediaFiles.slice(i, i + chunkSize);
+
+      formatted.push(chunk);
+
+      i += chunkSize;
+      toggle = !toggle;
+    }
+
+    return formatted;
+  };
+
   return (
-    <div className="min-h-screen pt-24 text-[#00000096] lg:px-40 px-20">
+    <div className="min-h-screen pt-24 text-[#00000096] lg:px-40 md:px-20 px-5">
       <h1 className="text-5xl font-bold mb-4 text-center mt-20">
         {photography?.name}
       </h1>
-      <p className=" text-base text-center leading-relaxed mt-10">
+      <p className=" text-base text-center leading-relaxed  my-10">
         {photography?.description}
       </p>
 
@@ -40,29 +60,27 @@ const Page = () => {
 
 export default Page;
 
-
 const MediaFilesComponent = ({ mediaFiles }) => {
   return (
-    <div className="media-container">
-      {mediaFiles.map((file, index) => {
-        const imagesToShow = (index % 2 === 0) ? 1 : 2;
-        const imagesSlice = mediaFiles.slice(index, index + imagesToShow);
-
+    <div className="space-y-2">
+      {mediaFiles.map((files, index) => {
         return (
-          <div key={index} className="flex space-x-4 mb-4 max-w-full h-[100dvh] justify-center">
-            {imagesSlice.map((image, idx) => (
-              <img
-                key={idx}
-                src={image.url} // Assuming `image.url` is the path to the image
-                alt={`image-${index}-${idx}`}
-                className={` ${imagesToShow === 2 && idx === 0 ? 'max-w-1/2 border-black border' : 'h-full'} rounded-md`}
-              />
-            ))}
+          <div key={index} className="flex gap-2 justify-center max-h-[100dvh] max-w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh]">
+            {files.map((file, idx) => {
+              return (
+                <img
+                  key={idx}
+                  src={file.url}
+                  alt={`image-${index}-${idx}`}
+                  className={` ${
+                    index % 2 === 0 ? "  max-w-full " : "max-w-1/2 h-full w-1/2 "
+                  } rounded-md object-cover min-h-full`}
+                />
+              );
+            })}
           </div>
         );
       })}
     </div>
   );
 };
-
-
