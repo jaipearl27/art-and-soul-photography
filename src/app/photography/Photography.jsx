@@ -9,12 +9,13 @@ import { useSearchParams, useRouter } from "next/navigation";
 const Photography = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
+  const [limit,setLimit] = useState(2)
   const [filter, setFilter] = useState("All");
   const [pageInfo, setPageInfo] = useState(null); // To handle pagination info
   const searchParams = useSearchParams(); // Used for reading query params
   const router = useRouter(); // Used for setting query params
 
-  const LIMIT = 2;
+  
 
   // Ensure `page` has a default value
   useEffect(() => {
@@ -32,8 +33,8 @@ const Photography = () => {
       try {
         const queryParam =
           filter !== "All"
-            ? `?type=${filter}&page=${page}&limit=${LIMIT}`
-            : `?page=${page}&limit=${LIMIT}`; // Always include the limit
+            ? `?type=${filter}&page=${page}&limit=${limit}`
+            : `?page=${page}&limit=${limit}`; // Always include the limit
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/photography${queryParam}`
         );
