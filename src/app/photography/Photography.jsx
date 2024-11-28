@@ -55,7 +55,7 @@ const Photography = () => {
   };
 
   return (
-    <Suspense fallback={"Loading..."}>
+   
       <div className="pt-[150px] space-y-10">
         {/* Page Title */}
         <div className="text-4xl text-center">Photography</div>
@@ -117,7 +117,7 @@ const Photography = () => {
           )}
         </div>
       </div>
-    </Suspense>
+    
   );
 };
 
