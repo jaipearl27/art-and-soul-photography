@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Films from "./Films";
 
 export default function page() {
