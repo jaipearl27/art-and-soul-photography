@@ -34,7 +34,9 @@ const Photography = () => {
           filter !== "All"
             ? `?type=${filter}&page=${page}&limit=${LIMIT}`
             : `?page=${page}&limit=${LIMIT}`; // Always include the limit
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/photography${queryParam}`);
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/photography${queryParam}`
+        );
         setData(res.data.Photographies); // Set photography data
         setPageInfo(res.data.pagination); // Set pagination info
         setLoading(false); // Data fetching done
@@ -43,7 +45,7 @@ const Photography = () => {
         setLoading(false);
       }
     };
-  
+
     setLoading(true); // Set loading state before fetching
     fetchData(); // Call fetch data function
   }, [filter, page]);
@@ -53,59 +55,69 @@ const Photography = () => {
   };
 
   return (
-    <div className="pt-[150px] space-y-10">
-      {/* Page Title */}
-      <div className="text-4xl text-center">Photography</div>
+    <Suspense fallback={"Loading..."}>
+      <div className="pt-[150px] space-y-10">
+        {/* Page Title */}
+        <div className="text-4xl text-center">Photography</div>
 
-      {/* Filter Buttons */}
-      <div className="bg-white mx-auto w-[90%] grid grid-col shadow rounded-3xl p-5">
-        <div className="flex justify-center space-x-4 mb-6">
-          <button
-            onClick={() => setFilter("All")}
-            className={`px-4 py-2 border rounded ${filter === "All" ? "bg-blue-600 text-white" : "text-gray-600"}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setFilter("Indian")}
-            className={`px-4 py-2 border rounded ${filter === "Indian" ? "bg-blue-600 text-white" : "text-gray-600"}`}
-          >
-            Indian
-          </button>
-          <button
-            onClick={() => setFilter("International")}
-            className={`px-4 py-2 border rounded ${filter === "International" ? "bg-blue-600 text-white" : "text-gray-600"}`}
-          >
-            International
-          </button>
-        </div>
-
-        {/* Photography Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {loading
-            ? Array.from({ length: 6 }).map((_, idx) => (
-                <PhotographySkeleton key={idx} />
-              ))
-            : data &&
-              data.map((item) => (
-                <BlogCard key={item.id} img={item?.thumbnail} item={item} />
-              ))}
-        </div>
-
-        {/* Pagination */}
-        {pageInfo && (
-          <div className="flex justify-center mt-5">
-            <Pagination
-              count={pageInfo?.pages || 1} // Calculate total pages based on backend response
-              page={pageInfo?.page || 1} // Ensure correct page is displayed
-              color="primary"
-              onChange={handlePagination}
-              className="cursor-pointer"
-            />
+        {/* Filter Buttons */}
+        <div className="bg-white mx-auto w-[90%] grid grid-col shadow rounded-3xl p-5">
+          <div className="flex justify-center space-x-4 mb-6">
+            <button
+              onClick={() => setFilter("All")}
+              className={`px-4 py-2 border rounded ${
+                filter === "All" ? "bg-blue-600 text-white" : "text-gray-600"
+              }`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => setFilter("Indian")}
+              className={`px-4 py-2 border rounded ${
+                filter === "Indian" ? "bg-blue-600 text-white" : "text-gray-600"
+              }`}
+            >
+              Indian
+            </button>
+            <button
+              onClick={() => setFilter("International")}
+              className={`px-4 py-2 border rounded ${
+                filter === "International"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-600"
+              }`}
+            >
+              International
+            </button>
           </div>
-        )}
+
+          {/* Photography Cards */}
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {loading
+              ? Array.from({ length: 6 }).map((_, idx) => (
+                  <PhotographySkeleton key={idx} />
+                ))
+              : data &&
+                data.map((item) => (
+                  <BlogCard key={item.id} img={item?.thumbnail} item={item} />
+                ))}
+          </div>
+
+          {/* Pagination */}
+          {pageInfo && (
+            <div className="flex justify-center mt-5">
+              <Pagination
+                count={pageInfo?.pages || 1} // Calculate total pages based on backend response
+                page={pageInfo?.page || 1} // Ensure correct page is displayed
+                color="primary"
+                onChange={handlePagination}
+                className="cursor-pointer"
+              />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 

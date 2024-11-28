@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import axios from "axios";
 import FilmCard from "./FilmCard";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -52,7 +52,9 @@ const Films = () => {
   };
 
   return (
-    <div className="pt-[150px] space-y-10">
+    
+    <Suspense fallback={"Loading..."}>
+      <div className="pt-[150px] space-y-10">
       {/* Title */}
       <div className="text-4xl text-center">Films</div>
 
@@ -78,6 +80,7 @@ const Films = () => {
         </div>
       </div>
     </div>
+    </Suspense>
   );
 };
 
