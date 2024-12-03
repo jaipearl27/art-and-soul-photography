@@ -4,7 +4,7 @@ import { useState } from "react";
 import Hero from "../../components/Homepage/Hero";
 import Link from "next/link";
 
-import FacebookIcon from "@mui/icons-material/Facebook";
+
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from "@mui/icons-material/Instagram";
 
@@ -81,9 +81,7 @@ const ContactUs = () => {
                     <Link href="https://www.instagram.com">
                       <InstagramIcon />
                     </Link>
-                    <Link href="https://www.facebook.com">
-                      <FacebookIcon />
-                    </Link>
+                   
                     <Link href="https://www.youtube.com">
                       <YouTubeIcon />
                     </Link>

@@ -21,7 +21,7 @@ const Header = () => {
               <Image src={Logo} alt="" height={120} width={120} />
             </Link>
           </div>
-          <div className="hidden md:flex gap-10 h-full items-center text-lg">
+          <div className="hidden lg:flex gap-10 h-full items-center text-lg">
             <Link
               href="/photography"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
@@ -46,24 +46,18 @@ const Header = () => {
             >
               Contact
             </Link>
-            <Link
-              href="https://instagram.com"
+            <a
+              href="https://www.instagram.com/artandsoulphotography.in/"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
             >
               <InstagramIcon />
-            </Link>
-            <Link
-              href="https://facebook.com"
-              className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
-            >
-              <FacebookIcon />
-            </Link>
-            <Link
-              href="https://youtube.com"
+            </a>
+            <a
+              href="https://youtube.com/@artandsoulphotographyfilms?si=Cxa3mZH5t84mt4Wd"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
             >
               <YouTubeIcon />
-            </Link>
+            </a>
           </div>
           <div className="lg:hidden flex flex-col justify-center">
             <div

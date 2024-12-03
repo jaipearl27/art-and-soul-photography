@@ -48,18 +48,18 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-semibold text-lg mb-2">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                <FacebookIcon className="h-6 w-6" />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                <InstagramIcon className="h-6 w-6" />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                <YouTubeIcon className="h-6 w-6" />
-                <span className="sr-only">Instagram</span>
-              </a>
+            <a
+              href="https://www.instagram.com/artandsoulphotography.in/"
+              className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href="https://youtube.com/@artandsoulphotographyfilms?si=Cxa3mZH5t84mt4Wd"
+              className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
+            >
+              <YouTubeIcon />
+            </a>
             </div>
           </div>
         </div>
