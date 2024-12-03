@@ -4,8 +4,7 @@ import { useState } from "react";
 import Hero from "../../components/Homepage/Hero";
 import Link from "next/link";
 
-
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 import { useForm } from "react-hook-form";
@@ -67,28 +66,34 @@ const ContactUs = () => {
               <div className="w-full justify-center items-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 justify-between text-base md:text-lg  text-black">
                   <div className="w-[150px] font-bold text-start">Email:</div>
-                  <div className="text-start font-semibold">info@artandsoulphotography.com</div>
+                  <div className="text-start font-semibold">
+                    info@artandsoulphotography.com
+                  </div>
                   <div className="w-[150px] font-bold text-start">Phone:</div>
                   <div className="text-start font-semibold">91+ 9999999999</div>
                   <div className="w-[150px] font-bold text-start">Address:</div>
                   <div className="text-start font-semibold">
-                    XYZ, Rajpur Road, Dehradun, Uttarakhand Pin
-                    248007
+                    XYZ, Rajpur Road, Dehradun, Uttarakhand Pin 248007
                   </div>
                   <div className="w-[150px] font-bold text-start">Social:</div>
                   <div className="text-start flex gap-2 flex-wrap">
-
-                    <Link href="https://www.instagram.com">
+                    <a
+                      href="https://www.instagram.com/artandsoulphotography.in/"
+                      className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
+                    >
                       <InstagramIcon />
-                    </Link>
-                   
-                    <Link href="https://www.youtube.com">
+                    </a>
+                    <a
+                      href="https://youtube.com/@artandsoulphotographyfilms?si=Cxa3mZH5t84mt4Wd"
+                      className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
+                    >
                       <YouTubeIcon />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div className="w-full">
+
+              <div className="w-full text-left">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div>
                     <input
@@ -112,7 +117,7 @@ const ContactUs = () => {
                       className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                       placeholder="Email"
                     />
-                    {errors.eamil && (
+                    {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
                         {errors.email.message}
                       </p>
@@ -136,13 +141,13 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <textarea
-                      {...register("message", {
+                      {...register("aboutWedding", {
                         required: "Message is required",
                       })}
                       id="message"
                       rows={5}
                       className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5 resize-none"
-                      placeholder="Message"
+                      placeholder="Tell us more about your wedding - event flow, venues"
                     />
                     {errors.message && (
                       <p className="text-red-500 text-sm mt-1">
@@ -150,6 +155,123 @@ const ContactUs = () => {
                       </p>
                     )}
                   </div>
+                  <div>
+                    <input
+                      type="text"
+                      {...register("guestCount")}
+                      id="guestCount"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                      placeholder="Guest Count"
+                    />
+                    {errors.guestCount && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.guestCount.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      {...register("location", {
+                        required: "Location is required",
+                      })}
+                      id="location"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                      placeholder="Location"
+                    />
+                    {errors.location && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.location.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="text-left space-y-2">
+                    <label
+                      htmlFor="eventDate"
+                      className="text-base font-semibold"
+                    >
+                      Event Date:
+                    </label>
+                    <input
+                      type="date"
+                      {...register("eventDate", {
+                        required: "Event Date is required",
+                      })}
+                      id="eventDate"
+                      className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                      placeholder="Event Date"
+                    />
+                    {errors.eventDate && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.eventDate.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="text-left space-y-2">
+                    <label
+                      htmlFor="serviceType"
+                      className="text-base font-semibold"
+                    >
+                      What service are you looking for ?
+                    </label>
+                    <div className="space-y-2 ">
+                      <div className="flex gap-2 w-full">
+                        <input
+                          type="radio"
+                          {...register("serviceType", {
+                            required: "Service Type is required",
+                          })}
+                          id="eventDate"
+                          value={"Wedding Photography"}
+                        />
+                        <label htmlFor="">Wedding Photography</label>
+                      </div>
+
+                      <div className="flex gap-2 w-full">
+                        <input
+                          type="radio"
+                          {...register("serviceType", {
+                            required: "Service Type is required",
+                          })}
+                          id="EngagementPhotography "
+                          value={"Engagement Photography"}
+                        />
+                        <label htmlFor="">Engagement Photography</label>
+                      </div>
+                      <div className="flex gap-2 w-full">
+                        <input
+                          type="radio"
+                          {...register("serviceType", {
+                            required: "Service Type is required",
+                          })}
+                          id="Pre-Wedding Photography"
+                          value={"Pre-Wedding photography"}
+                        />
+                        <label htmlFor="">Pre-Wedding Photography</label>
+                      </div>
+                      <div className="flex gap-2 w-full">
+                        <input
+                          type="radio"
+                          {...register("serviceType", {
+                            required: "Service Type is required",
+                          })}
+                          id="Other"
+                          value={"Other"}
+                        />
+                        <label htmlFor="">Other</label>
+                      </div>
+                    </div>
+
+                    {errors.serviceType && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.serviceType.message}
+                      </p>
+                    )}
+                  </div>
+
                   {loading ? (
                     <button
                       disabled={loading}
