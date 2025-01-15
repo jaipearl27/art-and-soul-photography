@@ -21,16 +21,13 @@ const ModernApproach = () => {
 
         <div className="md:flex flex-col hidden lg:pt-0 pt-20 text-black text-sm justify-center space-y-6 sm:w-[38%]">
           <p className="text-black leading-relaxed ">
-            Considered to be the epitome of Modern Photography and Filmmaking,
-            HOTC has transformed the Indian Wedding landscape on a regular
-            basis. For almost a decade, House On The Clouds has been creating
-            photographs and films which are timeless and have been etched in
-            memories of thousands of people forever.
+            Art and Soul Photography has redefined the essence of wedding
+            storytelling, blending artistry and emotion to create timeless
+            photographs and films.
           </p>
           <p className="text-black leading-relaxed">
-            Awarded as the Wedding Filmmaker of the year for four consecutive
-            years at the Weddingsutra awards along with numerous other awards,
-            HOTC is the only company listed on IMDB for its award-winning films.
+            For over a decade, they have captured unforgettable moments,
+            preserving memories that resonate with love and authenticity.
           </p>
         </div>
         {/* Right Image */}
@@ -44,33 +41,25 @@ const ModernApproach = () => {
       </div>
       <div className="flex flex-col md:hidden px-10 py-5 text-black text-sm justify-center space-y-6 w-full">
         <p className="text-black leading-relaxed ">
-          Considered to be the epitome of Modern Photography and Filmmaking,
-          HOTC has transformed the Indian Wedding landscape on a regular basis.
-          For almost a decade, House On The Clouds has been creating photographs
-          and films which are timeless and have been etched in memories of
-          thousands of people forever.
+          Celebrated as pioneers in wedding photography and filmmaking, Art and
+          Soul has earned accolades for their unparalleled creativity and
+          dedication, including being recognized at prestigious industry awards.
         </p>
         <p className="text-black leading-relaxed">
-          Awarded as the Wedding Filmmaker of the year for four consecutive
-          years at the Weddingsutra awards along with numerous other awards,
-          HOTC is the only company listed on IMDB for its award-winning films.
+          Renowned for their heartfelt narratives and cinematic excellence, they
+          are a trusted name for couples seeking extraordinary visual stories of
+          their special day.
         </p>
       </div>
       <div className="flex justify-center xl:text-2xl space-x-1 pt-32 md:space-x-2 md:absolute md:bottom-32 lg:bottom-36  md:left-1/2 md:-translate-x-[30%]">
-        <span className="font-serif  text-gray-800">
-          VOGUE
-        </span>
-        <span className="font-sans font-bold text-gray-800">
-          COSMOPOLITAN
-        </span>
+        <span className="font-serif  text-gray-800">WEDDING</span>
+        <span className="font-sans font-bold text-gray-800">ENGAGEMENT</span>
         <span className="font-sans font-bold text-gray-800 bg-gray-300 px-2">
-          HELLO!
+          PRE-WEDDING
         </span>
-        <span className="font-serif  text-gray-800">
-          BRIDES
-        </span>
+        <span className="font-serif  text-gray-800">BRIDES</span>
         <span className="font-sans font-bold text-gray-800 bg-gray-300 px-2">
-          TRAVEL+LEISURE
+          GROOM
         </span>
       </div>
     </div>

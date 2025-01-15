@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Hero from "../../components/Homepage/Hero";
-import Link from "next/link";
 
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
