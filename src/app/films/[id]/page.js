@@ -34,7 +34,7 @@ const FilmViewPage = () => {
           </div>
         ) : isPlaying ? (
           <iframe
-            src={film.mediaFiles[0].url}
+            src={Array.isArray(film?.mediaFiles[0]) && film?.mediaFiles[0]?.url}
             title={film.name}
             className="w-full h-[60vh] md:h-[80vh] object-cover"
             frameBorder="0"
