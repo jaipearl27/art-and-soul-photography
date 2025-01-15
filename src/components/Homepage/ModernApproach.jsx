@@ -23,11 +23,15 @@ const ModernApproach = () => {
           <p className="text-black leading-relaxed ">
             Art and Soul Photography has redefined the essence of wedding
             storytelling, blending artistry and emotion to create timeless
-            photographs and films.
+            photographs and films.For over a decade, they have captured
+            unforgettable moments, preserving memories that resonate with love
+            and authenticity.
           </p>
           <p className="text-black leading-relaxed">
-            For over a decade, they have captured unforgettable moments,
-            preserving memories that resonate with love and authenticity.
+            Celebrated as pioneers in wedding photography and filmmaking, Art
+            and Soul has earned accolades for their unparalleled creativity and
+            dedication, including being recognized at prestigious industry
+            awards.
           </p>
         </div>
         {/* Right Image */}
