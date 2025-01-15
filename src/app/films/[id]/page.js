@@ -8,6 +8,8 @@ const FilmViewPage = () => {
   const { id } = useParams();
   const [isPlaying, setIsPlaying] = useState(false);
   const [film, setFilm] = useState(null);
+  const [mediaFiles, setMediaFiles] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,6 +17,7 @@ const FilmViewPage = () => {
       .get(`${process.env.NEXT_PUBLIC_API_URL}/film/${id}`)
       .then(({ data }) => {
         setFilm(data?.film);
+        setMediaFiles(data?.mediaFiles)
         setLoading(false);
       })
       .catch((err) => {
@@ -34,10 +37,9 @@ const FilmViewPage = () => {
           </div>
         ) : isPlaying ? (
           <iframe
-            src={Array.isArray(film?.mediaFiles[0]) && film?.mediaFiles[0]?.url}
+            src={Array.isArray(mediaFiles) && mediaFiles[0]?.url}
             title={film.name}
             className="w-full h-[60vh] md:h-[80vh] object-cover"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
