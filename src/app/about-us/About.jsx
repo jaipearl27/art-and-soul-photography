@@ -13,7 +13,7 @@ const About = () => {
         <main className="flex-grow container mx-auto px-6">
           <section className="text-center mb-12">
             <h2 className="text-4xl text-black font-semibold mb-4">About Us</h2>
-            <div className="flex flex-col text-center mx-auto gap-4 bg-white p-4 px-8 rounded-2xl font-semibold text-black">
+            <div className="flex flex-col text-center mx-auto gap-4 bg-white p-4 px-8 rounded-2xl font-semibold text-[#000000]">
               <div>
                 Welcome to Art and Soul Photography, where every moment tells a
                 story, and every frame captures the essence of life’s beauty. We

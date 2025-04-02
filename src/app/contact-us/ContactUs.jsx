@@ -142,22 +142,24 @@ const ContactUs = () => {
                     <textarea
                       {...register("aboutWedding", {
                         required: "Message is required",
+                        maxLength:{value:1000,message:"maximum 1000 character allowed"}
                       })}
                       id="message"
                       rows={5}
                       className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5 resize-none"
                       placeholder="Tell us more about your wedding - event flow, venues"
                     />
-                    {errors.message && (
+                    {errors.aboutWedding && (
                       <p className="text-red-500 text-sm mt-1">
-                        {errors.message.message}
+                        {errors.aboutWedding.message}
                       </p>
                     )}
                   </div>
                   <div>
                     <input
-                      type="text"
-                      {...register("guestCount")}
+                      type="number"
+                      {...register("guestCount",{required:"at least 1 guest is requird,",min:{value:1,message:"At least 1 guest is required"},
+                      max:{value:1000000,message:"guest count maxLimit 1 lakh "}})}
                       id="guestCount"
                       className="bg-white border border-amber-600 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                       placeholder="Guest Count"

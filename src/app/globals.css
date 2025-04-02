@@ -19,6 +19,13 @@
   src: url("../app/fonts/Bodoni_Moda/BodoniModa-VariableFont_opsz\,wght.ttf");
 }
 
+
+@font-face {
+  font-family: "Noto_Serif_Yezidiksand";
+  src: url("../app/fonts/Noto_Serif_Yezidi/NotoSerifYezidi-VariableFont_wght.ttf");
+}
+
+
 .glass {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
@@ -31,7 +38,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Bodoni_Moda", Arial, Helvetica, sans-serif;
+  font-family:"Noto_Serif_Yezidiksand", "Bodoni_Moda", Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
