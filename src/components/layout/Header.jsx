@@ -41,7 +41,7 @@ const Header = () => {
               About
             </Link>
             <Link
-              href="/"
+              href="/contact-us"
               className="flex flex-col justify-center hover:shadow-[0_2px#000000] transition duration-300 "
             >
               Contact
